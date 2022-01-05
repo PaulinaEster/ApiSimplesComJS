@@ -21,52 +21,24 @@
   </header>
   <main>
     <section class="container">
-      <form class="d-flex filtro">
+      <form class="d-flex" id="filtros">
         <div class="form-check" id="filtro-completa">
           <label class="form-check-label" for="completas">
-            <input class="form-check-input" type="checkbox" value="" id="completas">
+            <input class="form-check-input" type="checkbox" name="filtro" value="" id="completas" >
             Completas
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="incompletas">
+          <input class="form-check-input" type="checkbox"  name="filtro" value="" id="incompletas" >
           <label class="form-check-label" for="incompletas">
             Incompletas
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="naoIniciadas">
-          <label class="form-check-label" for="naoIniciadas">
-            Não iniciadas
           </label>
         </div>
       </form>
     </section>
     <section class="container">
       <div class="container" id="atividades">
-        <div class="card atividade row">
-          <h5 class="card-header header-completa">Featured</h5>
-          <div class="card-body row">
-            <h5 class="card-title col-8">Special title treatment</h5>
-            <p class="card-text col-4">🟢 Completada</p>
-          </div>
-        </div>
 
-        <div class="card atividade row">
-          <h5 class="card-header header-incompleta">Featured</h5>
-          <div class="card-body row">
-            <h5 class="card-title col-8">Special title treatment</h5>
-            <p class="card-text col-4">🟡 Incompletada</p>
-          </div>
-        </div>
-      
-        <div class="card atividade row">
-          <h5 class="card-header header-nao-iniciada">Featured</h5>
-          <div class="card-body row">
-            <h5 class="card-title col-8">Special title treatment</h5>
-            <p class="card-text col-4">🔴 Não Iniciada</p>
-          </div>
-        </div>
       </div>
     </section>
   </main>

@@ -9,7 +9,7 @@ header{
   background-image: linear-gradient(to bottom, black, rgb(16, 15, 43));
 }
 
-.filtro{
+#filtros{
   text-align: center;
   display: flex;
   flex-direction: row;
