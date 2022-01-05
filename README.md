@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 
-=======
 # Api Simples com JS
-- api usada para estudos e praticas
-
+- uso de uma api em JS e HTML e também Bootstrap
 
 ```
 Link: https://jsonplaceholder.typicode.com
 ```
->>>>>>> 8404c47983fc5da353a32d512e4bfb6621e3419d
