@@ -1,34 +1,28 @@
 
 let res;
-let tudo = '';
-let completo = '';
-let incompleto = '';
+let tudo;
+let completo;
+let incompleto;
+let check;
 
-document.addEventListener('DOMContentLoaded', pegaApi, false);
-
-let check = document.getElementsByName('filtro');
+document.addEventListener('DOMContentLoaded', iniciaPagina, false);
 
 document.getElementById('filtros').addEventListener('click', reloadPagina)
 
 function reloadPagina(event){
-  console.log(check[1].checked);
+  converter(res);
   if(check[0].checked && check[1].checked || !check[0].checked && !check[1].checked){
-    document.getElementById('atividades').innerHTML = ``;
-    tudo = '';
-    converter(res);
-    document.getElementById('atividades').innerHTML += `${completo}${incompleto}`;
+    document.getElementById('atividades').innerHTML += `${tudo}`;
   }else if(check[1].checked){
-    document.getElementById('atividades').innerHTML = ``;
-    converter(res);
     document.getElementById('atividades').innerHTML += `${incompleto}`;
   }else if(check[0].checked){
-    document.getElementById('atividades').innerHTML = ``;
-    converter(res);
     document.getElementById('atividades').innerHTML += `${completo}`;
   }
 }
 
-function pegaApi() {
+function iniciaPagina() {  
+  check = document.getElementsByName('filtro');
+
   fetch('https://jsonplaceholder.typicode.com/todos')
   .then(response => response.json())
   .then(json => { 
@@ -66,17 +60,15 @@ const converterIncompleto = (title) => {
 const converter = (res) =>{
   completo = '';
   incompleto = '';
+  tudo = '';
+  document.getElementById('atividades').innerHTML = ``;
   res.forEach(e => { 
-    if(e.completed === true && check[0].checked === false ){
+    if(e.completed === true /* && check[0].checked === false  */){
       completo += converteCompleto(e.title);
       tudo += converteCompleto(e.title);
-    } else if(e.completed === true && check[0].checked === true ){
-      completo += converteCompleto(e.title);
-    } else if(e.completed === false && check[1].checked === false) {
+    }else if(e.completed === false /* && check[1].checked === false */) {
       incompleto += converterIncompleto(e.title);
       tudo += converterIncompleto(e.title);
-    } else if(e.completed === false && check[1].checked === true) {
-      incompleto += converterIncompleto(e.title);
     }
   }); 
 }
